@@ -7,20 +7,22 @@ public class Tarjeta {
 	private int cupoDisponible;
 	private String tipo;
 	private int numeroComprobacion;
+	private int contrasehna;
 	public Tarjeta() {
 		super();
 	}
 	public Tarjeta(int numero, int cupoMaximo, int cupoDisponible, String tipo,
-			int numeroComprobacion) {
+			int numeroComprobacion, int contrasehna) {
 		super();
 		this.numero = numero;
 		this.cupoMaximo = cupoMaximo;
 		this.cupoDisponible = cupoDisponible;
 		this.tipo = tipo;
 		this.numeroComprobacion = numeroComprobacion;
+		this.contrasehna = contrasehna;
 	}
 	public Tarjeta(int id, int numero, int cupoMaximo, int cupoDisponible,
-			String tipo, int numeroComprobacion) {
+			String tipo, int numeroComprobacion, int contrasehna) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -28,6 +30,7 @@ public class Tarjeta {
 		this.cupoDisponible = cupoDisponible;
 		this.tipo = tipo;
 		this.numeroComprobacion = numeroComprobacion;
+		this.contrasehna = contrasehna;
 	}
 	public int getId() {
 		return id;
@@ -65,5 +68,12 @@ public class Tarjeta {
 	public void setNumeroComprobacion(int numeroComprobacion) {
 		this.numeroComprobacion = numeroComprobacion;
 	}
+	public int getContrasehna() {
+		return contrasehna;
+	}
+	public void setContrasehna(int contrasehna) {
+		this.contrasehna = contrasehna;
+	}
+	
 	
 }
