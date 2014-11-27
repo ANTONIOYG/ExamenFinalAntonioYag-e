@@ -2,46 +2,22 @@ package es.examen.modelo;
 
 public class Tarjeta {
 	private int id;
-	private int numero;
+	private String numero;
 	private int cupoMaximo;
 	private int cupoDisponible;
 	private String tipo;
-	private int numeroComprobacion;
-	private int contrasehna;
-	public Tarjeta() {
-		super();
-	}
-	public Tarjeta(int numero, int cupoMaximo, int cupoDisponible, String tipo,
-			int numeroComprobacion, int contrasehna) {
-		super();
-		this.numero = numero;
-		this.cupoMaximo = cupoMaximo;
-		this.cupoDisponible = cupoDisponible;
-		this.tipo = tipo;
-		this.numeroComprobacion = numeroComprobacion;
-		this.contrasehna = contrasehna;
-	}
-	public Tarjeta(int id, int numero, int cupoMaximo, int cupoDisponible,
-			String tipo, int numeroComprobacion, int contrasehna) {
-		super();
-		this.id = id;
-		this.numero = numero;
-		this.cupoMaximo = cupoMaximo;
-		this.cupoDisponible = cupoDisponible;
-		this.tipo = tipo;
-		this.numeroComprobacion = numeroComprobacion;
-		this.contrasehna = contrasehna;
-	}
+	private String numeroComprobacion;
+	private String contrasehna;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public int getCupoMaximo() {
@@ -62,18 +38,41 @@ public class Tarjeta {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public int getNumeroComprobacion() {
+	public String getNumeroComprobacion() {
 		return numeroComprobacion;
 	}
-	public void setNumeroComprobacion(int numeroComprobacion) {
+	public void setNumeroComprobacion(String numeroComprobacion) {
 		this.numeroComprobacion = numeroComprobacion;
 	}
-	public int getContrasehna() {
+	public String getContrasehna() {
 		return contrasehna;
 	}
-	public void setContrasehna(int contrasehna) {
+	public void setContrasehna(String contrasehna) {
 		this.contrasehna = contrasehna;
 	}
-	
+	public Tarjeta(String numero, int cupoMaximo, int cupoDisponible,
+			String tipo, String numeroComprobacion, String contrasehna) {
+		super();
+		this.numero = numero;
+		this.cupoMaximo = cupoMaximo;
+		this.cupoDisponible = cupoDisponible;
+		this.tipo = tipo;
+		this.numeroComprobacion = numeroComprobacion;
+		this.contrasehna = contrasehna;
+	}
+	public Tarjeta(int id, String numero, int cupoMaximo, int cupoDisponible,
+			String tipo, String numeroComprobacion, String contrasehna) {
+		super();
+		this.id = id;
+		this.numero = numero;
+		this.cupoMaximo = cupoMaximo;
+		this.cupoDisponible = cupoDisponible;
+		this.tipo = tipo;
+		this.numeroComprobacion = numeroComprobacion;
+		this.contrasehna = contrasehna;
+	}
+	public Tarjeta() {
+		super();
+	}
 	
 }

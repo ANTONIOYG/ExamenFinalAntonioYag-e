@@ -32,7 +32,7 @@ public class TarjetaDAO {
 	     private void conectar() {
 	     try {
 	            Class.forName("com.mysql.jdbc.Driver");
-	            cx= DriverManager.getConnection("jdbc:mysql://localhost:3306/banco","root","root");
+	            cx= DriverManager.getConnection("jdbc:mysql://localhost:3306/BANCO","root","root");
 	            cx.setAutoCommit(false);
 	     }
    catch(SQLException e) {
@@ -65,12 +65,12 @@ public class TarjetaDAO {
 	                PreparedStatement ps =cx.prepareStatement("INSERT INTO TARJETACREDITO VALUES(?,?,?,?,?,?,?)"); 
 	                  // 2.1 setear los interrogantes...
 	                ps.setInt(1, 0);
-	                ps.setInt(2, tarjeta.getNumero());
+	                ps.setString(2, tarjeta.getNumero());
 	                ps.setInt(3, tarjeta.getCupoMaximo());
 	                ps.setInt(4, tarjeta.getCupoDisponible());
 	                ps.setString(5, tarjeta.getTipo());
-	                ps.setInt(6, tarjeta.getNumeroComprobacion());
-	                ps.setInt(7, tarjeta.getContrasehna());
+	                ps.setString(6, tarjeta.getNumeroComprobacion());
+	                ps.setString(7, tarjeta.getContrasehna());
 	                
 	                //3. Ejecutar la consulta
 	                 int filasAfectadas =ps.executeUpdate();
@@ -118,7 +118,7 @@ public class TarjetaDAO {
             }
 	    	return idM;
 		}
-		public ArrayList<Tarjeta> consultarTarjeta(int numero) {
+		/*public ArrayList<Tarjeta> consultarTarjeta(String numero) {
 			// TODO Auto-generated method stub
 			ArrayList<Tarjeta> tarjetas= new ArrayList<Tarjeta>();
 	    	try {
@@ -127,19 +127,19 @@ public class TarjetaDAO {
 	    		//2. preparar la sentencia
 	    		PreparedStatement ps = cx.prepareStatement("SELECT * FROM TARJETACREDITO WHERE NUMERO LIKE ?");
 	    		// 2.1 setear el interrogante
-	    		ps.setInt(1, "%"+numero+"%");
+	    		ps.setString(1, "%"+numero+"%");
 	    		//3. ejecutar la consulta
 	    		ResultSet consulta = ps.executeQuery();
 	    		//4. bajar el resultado de la consulta y ponerlo en el arrayList
 	    		while(consulta.next()) {
 	    			Tarjeta p = new Tarjeta();
 	    			p.setId(consulta.getInt("id"));
-	    			p.setNumero(consulta.getInt("numero"));
+	    			p.setNumero(consulta.getString("numero"));
 	    			p.setCupoMaximo(consulta.getInt("cupoMaximo"));
 	    			p.setCupoDisponible(consulta.getInt("cupoDisponible"));
 	    			p.setTipo(consulta.getString("tipo"));
-	    			p.setNumeroComprobacion(consulta.getInt("numeroComprobacion"));
-	    			p.setContrasehna(consulta.getInt("contrasehna"));
+	    			p.setNumeroComprobacion(consulta.getString("numeroComprobacion"));
+	    			p.setContrasehna(consulta.getString("contrasehna"));
 	    			tarjetas.add(p);
 	    		}
 	    		
@@ -152,6 +152,6 @@ public class TarjetaDAO {
                   desconectar();
             }
 	    	return tarjetas;
-		}
+		}*/
 
 }
